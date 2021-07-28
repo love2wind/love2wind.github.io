@@ -1,6 +1,6 @@
 ### 🏠一个简单的主页🏠
 
-> **Links:**[](https://love2wind.com）
+> **Links：** [https://love2wind.com](https://love2wind.com）
 
 ### 🖼️截 图🖼️
 
