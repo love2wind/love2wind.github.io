@@ -1,21 +1,7 @@
 <script>
-// 禁用错误报告
-// 这里不需要实现，因为 JavaScript 不会产生 PHP 中的错误报告
-
-const t = new URLSearchParams(window.location.search).get("t");
-const q = document.getElementById("q").value;
-
-if (q === "") {
-  // do nothing
-} else {
-  if (t === "b") {
-    window.location.href = "https://www.google.com.hk/search?hl=zh&q=" + encodeURIComponent(q);
-  } else {
-    // 默认谷歌
-    window.location.href = "//www.baidu.com/s?ie=utf-8&word=" + encodeURIComponent(q);
-  }
-}
-
+function redirect() { let t = new URLSearchParams(window.location.search).get("t"); let q = document.getElementById("q").value;
+if (q === "") { return; } else { if (t === "b") { window.location.href = "https://www.google.com.hk/search?hl=zh&q=" + q; } else { window.location.href = "//www.baidu.com/s?ie=utf-8&word=" + q; } } }
+redirect();
 </script>
 
 <!DOCTYPE html>
@@ -189,24 +175,24 @@ WIDGET = {
             <div class="sou">
                 <form action="" method="post" target="_self">
 <script>
-const t = window.location.search.substring(3);
-
-const lg = document.createElement("div");
-lg.classList.add("lg");
-
-if (t === "b") {
-  lg.style.background = "url(icon/g.svg) no-repeat center/cover";
-  lg.onclick = function() {
-    window.location.href = "?t=";
-  };
-} else {
-  lg.style.background = "url(icon/baidu.svg) no-repeat center/cover";
-  lg.onclick = function() {
-    window.location.href = "?t=b";
-  };
+function toggleSearchEngine() {
+  let t = new URLSearchParams(window.location.search).get("t");
+  let lg = document.querySelector(".lg");
+  
+  if (t === "b") {
+    lg.style.background = "url(icon/g.svg) no-repeat center/cover";
+    lg.onclick = function() {
+      window.location.href = "?t=";
+    };
+  } else {
+    lg.style.background = "url(icon/baidu.svg) no-repeat center/cover";
+    lg.onclick = function() {
+      window.location.href = "?t=b";
+    };
+  }
 }
 
-document.body.appendChild(lg);
+toggleSearchEngine();
 </script>
                     <!--input class="t" type="text" value="" name="t" hidden-->
                     <input class="wd" type="text" placeholder="请输入搜索内容" name="q" x-webkit-speech lang="zh-CN" autocomplete="off">
@@ -219,16 +205,7 @@ document.body.appendChild(lg);
                 </ul-->
             </div>
         </div>
-<script>
-const currentYear = new Date().getFullYear();
-
-const foot = document.createElement("div");
-foot.classList.add("foot");
-foot.innerHTML = `© 2020-${currentYear} by <a href="https://www.tangguoya.com/">皮皮歪</a> . All rights reserved.`;
-
-document.body.appendChild(foot);
-</script>
-<!--        <div class="foot">© 2020-<?php //echo date("Y") ?> by <a href="https://www.tangguoya.com/">皮皮歪</a> . All rights reserved.</div>-->
+       <div class="foot">© 2020-2023 by <a href="https://www.tangguoya.com/">皮皮歪</a> . All rights reserved.</div>
     </div>
 <!--
 作者:PP·Y
