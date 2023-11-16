@@ -1,7 +1,22 @@
 <script>
-function redirect() { let t = new URLSearchParams(window.location.search).get("t"); let q = document.getElementById("q").value;
-if (q === "") { return; } else { if (t === "b") { window.location.href = "https://www.google.com.hk/search?hl=zh&q=" + q; } else { window.location.href = "//www.baidu.com/s?ie=utf-8&word=" + q; } } }
-redirect();
+//禁用错误报告
+// JavaScript中无需禁用错误报告
+
+//获取URL参数
+const urlParams = new URLSearchParams(window.location.search);
+const t = urlParams.get('t');
+const q = urlParams.get('q');
+
+if (q === null || q === "") {
+  //如果q参数为空，则不执行任何操作
+} else {
+  if (t === "b") {
+    window.location.href = "https://www.google.com.hk/search?hl=zh&q=" + q;
+  } else {
+    //默认谷歌
+    window.location.href = "//www.baidu.com/s?ie=utf-8&word=" + q;
+  }
+}
 </script>
 
 <!DOCTYPE html>
@@ -174,35 +189,37 @@ WIDGET = {
             <div class="shlogo" style="background: url() no-repeat center/cover;"></div>
             <div class="sou">
                 <form action="" method="post" target="_self">
-<script>
-/*function toggleSearchEngine() {
-  let t = new URLSearchParams(window.location.search).get("t");
-  let lg = document.querySelector(".lg");
-  
-  if (t === "b") {
-    lg.style.background = "url(icon/g.svg) no-repeat center/cover";
-    lg.onclick = function() {
-      window.location.href = "?t=";
-    };
-  } else {
-    lg.style.background = "url(icon/baidu.svg) no-repeat center/cover";
-    lg.onclick = function() {
-      window.location.href = "?t=b";
-    };
-  }
-}
 
-toggleSearchEngine();*/
-</script>
                     <!--input class="t" type="text" value="" name="t" hidden-->
                     <input class="wd" type="text" placeholder="请输入搜索内容" name="q" x-webkit-speech lang="zh-CN" autocomplete="off">
                     <button><svg class="icon" style=" width: 21px; height: 21px; opacity: 0.5;" aria-hidden="true"><use xlink:href="#icon-sousuo"></use></svg></button>
                 </form>
                 <div id="word"></div>
-                <ul>
+ <script>
+function toggleSearchEngine() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const t = urlParams.get('t');
+  const lg = document.querySelector('.lg');
+
+  if (t === 'b') {
+    lg.style.background = 'url(icon/g.svg) no-repeat center/cover';
+    lg.onclick = function() {
+      window.location.href = '?t=';
+    };
+  } else {
+    lg.style.background = 'url(icon/baidu.svg) no-repeat center/cover';
+    lg.onclick = function() {
+      window.location.href = '?t=b';
+    };
+  }
+}
+
+toggleSearchEngine();
+</script>
+               <!--ul>
                     <li data-s="baidu" target="_blank"><i style="background-image: url(icon/baidu.svg);"></i>百度一下</li>
                     <li data-s="google" target="_blank"><i style="background-image: url(icon/g.svg);"></i>谷歌一下</li>
-                </ul>
+                </ul-->
             </div>
         </div>
        <div class="foot">© 2020-2023 by <a href="https://www.tangguoya.com/">皮皮歪</a> . All rights reserved.</div>
