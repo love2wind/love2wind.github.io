@@ -35,7 +35,7 @@
 <li><a href="https://nie.su/feed" target="_blank" rel="nofollow noopener" class="fa fa-rss" title="订阅涅槃博客"><span class="label">RSS</span></a></li>
 <li><a href="https://wb.nie.ge" target="_blank" rel="nofollow noopener" class="icon brands fa-weibo" title="微博关注我"><span class="label">我的微博</span></a></li>
 <li><a href="https://t.me/niepanxiaomibot" target="_blank" rel="nofollow noopener" class="fa-solid fa-paper-plane" title="联系我的TG"><span class="label">联系我的TG</span></a></li>
-<li><a href="https://fastly.jsdelivr.net/gh/love2wind/love2wind.github.io/assets/gzh.png" target="_blank" rel="nofollow noopener" class="icon brands fa-weixin" title="关注涅槃公众号niepantea"><span class="label">关注我的公众号</span></a></li>
+<li><a href="javascript:" target="_blank" rel="nofollow noopener" class="weixin icon brands fa-weixin" title="关注涅槃公众号niepantea"><span class="label">关注我的公众号</span></a></li>
 <li><a href="https://github.com/love2wind" target="_blank" rel="nofollow noopener" class="icon brands fa-github" title="Fork me on Github"><span class="label">Github</span></a></li>
 <li><a href="https://twitter.com/love2wind" target="_blank" rel="nofollow noopener" class="fa-brands fa-x-twitter" title="关注我的Twitter"><span class="label">Twitter</span></a></li>
 <li><a href="mailto:love2wind@gmai.com" target="_blank" rel="nofollow noopener" class="fa fa-envelope" title="给我发邮件"><span class="label">Email</span></a></li>
@@ -43,7 +43,28 @@
 </ul>
 </nav>
 </header>
-
+<style>
+/*微信二维码 by chrafz.com*/
+a.weixin{position:relative;}
+.weixin::after{
+  content: url(https://fastly.jsdelivr.net/gh/love2wind/love2wind.github.io/assets/gzh.png);
+  position: absolute;
+  right: -25px;
+  top: 50px;
+  z-index: 99;
+  width: 168px;
+  height: 168px;
+  transform-origin: top;
+  transform: scale(0);
+  opacity: 0;
+  /*border:.5rem solid #000;
+  border-radius:.15rem;*/
+  -webkit-transition:all .4s ease-in-out;
+  -o-transition:all .4s ease-in-out;
+  transition:all .4s ease-in-out;
+}
+.weixin:hover::after{transform:scale(1); opacity: 1;}
+</style> 
 <footer id="footer">
 <span class="copyright" style="font-size:15px">© 2020-2023 <a href="#" rel="nofollow">錯愛涅槃</a></span>
 </footer>
