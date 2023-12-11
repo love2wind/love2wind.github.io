@@ -47,13 +47,12 @@
 /*微信二维码 by chrafz.com*/
 a.weixin{position:relative;}
 .weixin::after{
-  content: url(https://fastly.jsdelivr.net/gh/love2wind/love2wind.github.io/assets/gzh.png);
   position: absolute;
-  right: -25px;
-  top: 50px;
+  right: -60px;
+  top: 90px;
   z-index: 99;
-  width: 168px;
-  height: 168px;
+  width: 200px !important;
+  height: 200px !important;
   transform-origin: top;
   transform: scale(0);
   opacity: 0;
@@ -62,6 +61,9 @@ a.weixin{position:relative;}
   -webkit-transition:all .4s ease-in-out;
   -o-transition:all .4s ease-in-out;
   transition:all .4s ease-in-out;
+  content: '';
+  background: url(https://fastly.jsdelivr.net/gh/love2wind/love2wind.github.io/assets/gzh.png);
+  background-size: cover;
 }
 .weixin:hover::after{transform:scale(1); opacity: 1;}
 </style> 
